@@ -197,54 +197,50 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* Banner image with glowing border */}
+          {/* Banner container with glowing border */}
           <div
-            className="relative rounded-2xl overflow-hidden shadow-2xl mx-auto"
+            className="rounded-2xl overflow-hidden shadow-2xl mx-auto bg-[#0A2540] border border-cyan-500/30"
             style={{
-              maxWidth: "960px",
-              boxShadow: "0 0 0 2px rgba(39,196,232,0.4), 0 0 40px rgba(39,196,232,0.15), 0 20px 60px rgba(0,0,0,0.5)",
+              maxWidth: "1000px",
+              boxShadow: "0 0 0 1px rgba(39,196,232,0.3), 0 0 35px rgba(39,196,232,0.15), 0 20px 50px rgba(0,0,0,0.6)",
             }}
           >
-            {/* The banner image – full width, auto height */}
-            <div className="relative w-full" style={{ aspectRatio: "16/7" }}>
+            {/* The banner image – full width, natural auto height, never cut */}
+            <div className="w-full bg-[#051320]">
               <Image
                 src="/images/carousel-1.jpg"
                 alt="Aqua Purity Services – RO Water Purification, Sales & Spare Parts"
-                fill
-                className="object-cover"
+                width={1280}
+                height={720}
+                className="w-full h-auto block object-contain"
                 priority
               />
-              {/* Subtle dark overlay for readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10" />
             </div>
 
-            {/* Bottom CTA bar */}
-            <div
-              className="absolute bottom-0 left-0 right-0 flex flex-col sm:flex-row items-center justify-between gap-3 px-4 sm:px-8 py-3 sm:py-4"
-              style={{ background: "linear-gradient(to top, rgba(7,27,45,0.95) 60%, transparent)" }}
-            >
+            {/* Bottom CTA bar – clearly placed BELOW the image */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-4 sm:px-6 py-4 bg-[#081F35] border-t border-cyan-500/20">
               <div className="text-center sm:text-left">
                 <p className="text-white font-bold text-sm sm:text-base leading-tight">
-                  Expert RO Service at Your Doorstep
+                  Expert RO Service &amp; Water Purifier Solutions at Your Doorstep
                 </p>
-                <p className="text-cyan-300 text-xs font-medium mt-0.5">
-                  📞 7666697586 &nbsp;|&nbsp; info@aquapurity.in &nbsp;|&nbsp; www.aquapurity.in
+                <p className="text-cyan-300 text-xs font-medium mt-1">
+                  📞 Call / WhatsApp: 7666697586 &nbsp;|&nbsp; Fast Doorstep Service in 90 Mins
                 </p>
               </div>
-              <div className="flex gap-2 flex-shrink-0">
+              <div className="flex gap-2.5 flex-shrink-0">
                 <a
                   href={`https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent("Hi! I need RO water purifier service.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-whatsapp btn-sm font-bold shadow-lg"
                 >
-                  <MessageCircle size={14} /> WhatsApp
+                  <MessageCircle size={15} /> WhatsApp
                 </a>
                 <a
                   href={`tel:${BUSINESS.primaryPhone.replace(/\s/g, "")}`}
                   className="btn btn-primary btn-sm font-bold shadow-lg"
                 >
-                  <Phone size={14} /> Call Now
+                  <Phone size={15} /> Call Now
                 </a>
               </div>
             </div>
