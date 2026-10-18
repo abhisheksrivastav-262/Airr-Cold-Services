@@ -14,6 +14,7 @@ const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "AC Services", href: "/ac-services" },
   { label: "RO Services", href: "/ro-services" },
+  { label: "Product & Work Gallery", href: "/gallery" },
   { label: "AMC Plans", href: "/amc-plans" },
   { label: "Contact Us", href: "/contact" },
   { label: "Book Service", href: "/book-service" },

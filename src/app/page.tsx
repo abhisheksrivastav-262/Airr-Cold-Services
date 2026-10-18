@@ -408,23 +408,120 @@ export default function HomePage() {
                 Explore RO Services <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-cyan-100">
               <div className="relative h-[460px]">
                 <Image
-                  src="/images/carousel-2.jpg"
-                  alt="RO water purifier service and installation"
+                  src="/images/ro-service.jpg"
+                  alt="Professional technician inspecting and servicing modern RO water purifier"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071B2D]/90 via-[#071B2D]/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="glass rounded-xl p-4 text-white">
-                    <p className="font-700 text-lg">RO Water Purifier Services</p>
-                    <p className="text-white/80 text-sm mt-1">Installation, repair, servicing & filter replacement for all brands</p>
+                  <div className="glass rounded-xl p-4 text-white border border-white/20">
+                    <p className="font-700 text-lg">Multi-Brand RO Water Purifier Care</p>
+                    <p className="text-white/80 text-sm mt-1">Installation, repair, servicing &amp; filter replacement for all brands</p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── REAL RO PRODUCTS & MODELS PREVIEW ───────────────────────────── */}
+      <section className="section-py bg-[#F6F9FC] border-y border-slate-200" aria-label="RO Purifier Models Showcase">
+        <div className="container-site">
+          <div className="text-center mb-10">
+            <div className="section-tag mx-auto" style={{ color: "var(--color-cyan)", background: "rgba(39,196,232,0.1)", borderColor: "rgba(39,196,232,0.3)" }}>
+              <Droplets size={12} />
+              Featured RO Models
+            </div>
+            <h2 className="section-title">
+              Our High-Performance <span>Water Purifiers</span>
+            </h2>
+            <p className="section-desc mx-auto text-center">
+              Explore our real RO systems, copper + alkaline purifiers, and commercial water filtration systems with full doorstep installation across Mumbai.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {[
+              {
+                title: "Aqua Purity Prime RO+UV+UF",
+                subtitle: "Multi-stage home purification",
+                img: "/images/ro-gallery/ro-model-1.png",
+                tag: "Best Seller",
+              },
+              {
+                title: "Aqua Purity Grand Copper",
+                subtitle: "Alkaline & copper enriched",
+                img: "/images/ro-gallery/ro-model-2.png",
+                tag: "Health Choice",
+              },
+              {
+                title: "Aqua Purity Compact RO",
+                subtitle: "Sleek wall or counter mount",
+                img: "/images/ro-gallery/ro-model-3.png",
+                tag: "Compact",
+              },
+              {
+                title: "Aqua Purity High-Flow RO",
+                subtitle: "Commercial & large homes",
+                img: "/images/ro-gallery/ro-model-7.png",
+                tag: "High Capacity",
+              },
+            ].map((p, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 flex flex-col group"
+              >
+                <div className="relative w-full h-64 bg-gradient-to-b from-slate-50 to-slate-100/70 p-4 flex items-center justify-center border-b border-slate-100">
+                  <Image
+                    src={p.img}
+                    alt={p.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#071B2D] text-cyan-300 text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
+                    {p.tag}
+                  </span>
+                </div>
+                <div className="p-4 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-sm group-hover:text-blue-600 transition-colors">
+                      {p.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-1">{p.subtitle}</p>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <a
+                      href={`https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(
+                        `Hi, I want to inquire about price and details for ${p.title}.`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
+                    >
+                      <MessageCircle size={13} /> Inquire
+                    </a>
+                    <Link
+                      href="/gallery"
+                      className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-0.5"
+                    >
+                      View Details <ChevronRight size={13} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link href="/gallery" className="btn btn-primary shadow-md">
+              View Complete RO &amp; Product Gallery <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

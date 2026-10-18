@@ -268,6 +268,101 @@ export default function ROServicesPage() {
         </div>
       </section>
 
+      {/* Real RO Purifier Models Showcase */}
+      <section className="py-16 bg-white border-t border-slate-200">
+        <div className="container-site">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+            <div>
+              <span className="text-xs font-bold text-cyan-700 uppercase tracking-widest bg-cyan-100 px-3 py-1 rounded-full">
+                Product Catalog
+              </span>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-[#071B2D] mt-2">
+                Explore Our Real RO Purifier Models
+              </h2>
+              <p className="text-slate-600 text-xs md:text-sm mt-1">
+                From compact domestic ROs to copper + alkaline mineral systems and high-flow office purifiers.
+              </p>
+            </div>
+            <Link href="/gallery" className="btn btn-primary text-xs font-bold shadow-md flex-shrink-0">
+              View Full Gallery &amp; All Models <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Aqua Purity Prime RO+UV+UF",
+                desc: "High capacity domestic purifier with auto-flush",
+                img: "/images/ro-gallery/ro-model-1.png",
+                badge: "Best Seller",
+              },
+              {
+                title: "Aqua Purity Grand Copper",
+                desc: "Copper & alkaline mineral enriched water",
+                img: "/images/ro-gallery/ro-model-2.png",
+                badge: "Copper Rich",
+              },
+              {
+                title: "Aqua Purity Elegant RO",
+                desc: "Equipped with digital TDS controller valve",
+                img: "/images/ro-gallery/ro-model-4.png",
+                badge: "TDS Control",
+              },
+              {
+                title: "Aqua Purity Royal Alkaline",
+                desc: "Essential trace mineralizer for sweet taste",
+                img: "/images/ro-gallery/ro-model-5.png",
+                badge: "Alkaline",
+              },
+            ].map((prod, i) => (
+              <div
+                key={i}
+                className="bg-slate-50/80 rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group"
+              >
+                <div className="relative w-full h-60 bg-gradient-to-b from-white to-slate-100/60 p-4 flex items-center justify-center border-b border-slate-100">
+                  <Image
+                    src={prod.img}
+                    alt={prod.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#071B2D] text-cyan-300 text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
+                    {prod.badge}
+                  </span>
+                </div>
+                <div className="p-4 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-sm group-hover:text-blue-600 transition-colors">
+                      {prod.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-1 leading-relaxed">{prod.desc}</p>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between">
+                    <a
+                      href={`https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(
+                        `Hi, I want to inquire about purchasing / servicing ${prod.title}.`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
+                    >
+                      <MessageCircle size={13} /> Inquire
+                    </a>
+                    <Link
+                      href="/gallery"
+                      className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-0.5"
+                    >
+                      Details <ArrowRight size={12} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Common Problems & Fixes Section */}
       <section className="py-20 bg-white border-y border-slate-200">
         <div className="container-site">
