@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Airr Cold Services",
   },
   description:
-    "Expert AC repair, installation, maintenance, gas refilling, AMC plans, and RO water purifier services across Mumbai, Thane & Navi Mumbai. Call +91 84335 50882.",
+    "Expert AC repair, installation, maintenance, gas refilling, AMC plans, and RO water purifier services across Mumbai, Thane & Navi Mumbai. Call +91 76666 97586.",
   keywords: [
     "AC repair Mumbai",
     "AC installation Andheri",
@@ -84,7 +84,7 @@ export default function RootLayout({
               description:
                 "Expert AC repair, installation, maintenance and RO water purifier services across Mumbai and Maharashtra.",
               url: "https://airrcold.com",
-              telephone: "+918433550882",
+              telephone: "+917666697586",
               email: "airrcoldservices@gmail.com",
               address: {
                 "@type": "PostalAddress",

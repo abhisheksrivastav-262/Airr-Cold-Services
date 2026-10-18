@@ -10,7 +10,7 @@ import { BUSINESS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "AC Repair, Installation & Maintenance Services in Mumbai – Airr Cold Services",
   description:
-    "Complete AC repair, installation, uninstallation, gas refilling, and maintenance services in Mumbai. Daikin, Voltas, LG, Samsung & all brands. Call +91 84335 50882.",
+    "Complete AC repair, installation, uninstallation, gas refilling, and maintenance services in Mumbai. Daikin, Voltas, LG, Samsung & all brands. Call +91 76666 97586.",
 };
 
 const allAcServices = [

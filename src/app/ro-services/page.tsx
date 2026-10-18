@@ -10,7 +10,7 @@ import { BUSINESS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "RO Water Purifier Services in Mumbai – Airr Cold Services",
   description:
-    "Complete RO water purifier installation, filter replacement, membrane change, leakage repair, and deep sanitisation in Mumbai. Kent, Aquaguard, Pureit & all brands. Call +91 84335 50882.",
+    "Complete RO water purifier installation, filter replacement, membrane change, leakage repair, and deep sanitisation in Mumbai. Kent, Aquaguard, Pureit & all brands. Call +91 76666 97586.",
 };
 
 const allRoServices = [

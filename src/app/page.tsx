@@ -12,7 +12,7 @@ import QuickBookWidget from "@/components/home/QuickBookWidget";
 export const metadata: Metadata = {
   title: "AC Repair, Installation & RO Water Purifier Services in Mumbai",
   description:
-    "Airr Cold Services offers expert AC repair, installation, maintenance, gas refilling, AMC plans, and RO water purifier services across Mumbai. 5,000+ happy customers. 10+ years experience. Call +91 84335 50882.",
+    "Airr Cold Services offers expert AC repair, installation, maintenance, gas refilling, AMC plans, and RO water purifier services across Mumbai. 5,000+ happy customers. 10+ years experience. Call +91 76666 97586.",
 };
 
 const acServices = [

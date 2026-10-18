@@ -30,7 +30,7 @@ export function formatDateTime(date: Date | string): string {
   });
 }
 
-export function whatsappUrl(message: string, phone = "918433550882"): string {
+export function whatsappUrl(message: string, phone = "917666697586"): string {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 

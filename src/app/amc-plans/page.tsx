@@ -194,7 +194,7 @@ export default function AMCPlansPage() {
                 </div>
 
                 <a
-                  href={`https://wa.me/918433550882?text=${encodeURIComponent(`Hi! I'd like to enquire about the ${plan.name}.`)}`}
+                  href={`https://wa.me/917666697586?text=${encodeURIComponent(`Hi! I'd like to enquire about the ${plan.name}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`btn w-full justify-center ${plan.featured ? "btn-white" : "btn-primary"}`}
@@ -264,7 +264,7 @@ export default function AMCPlansPage() {
                 </div>
 
                 <a
-                  href={`https://wa.me/918433550882?text=${encodeURIComponent(`Hi! I'd like to enquire about the ${plan.name}.`)}`}
+                  href={`https://wa.me/917666697586?text=${encodeURIComponent(`Hi! I'd like to enquire about the ${plan.name}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`btn w-full justify-center ${plan.featured ? "text-white border-white/30" : "btn-primary"}`}
@@ -288,16 +288,16 @@ export default function AMCPlansPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href={`https://wa.me/918433550882?text=${encodeURIComponent("Hi! I'd like to get an AMC quote for my AC/RO.")}`}
+                href={`https://wa.me/917666697586?text=${encodeURIComponent("Hi! I'd like to get an AMC quote for my AC/RO.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp btn-lg"
               >
                 WhatsApp for AMC Quote
               </a>
-              <a href="tel:+918433550882" className="btn btn-lg" style={{ background: "rgba(255,255,255,0.15)", color: "white", borderColor: "rgba(255,255,255,0.30)" }}>
+              <a href="tel:+917666697586" className="btn btn-lg" style={{ background: "rgba(255,255,255,0.15)", color: "white", borderColor: "rgba(255,255,255,0.30)" }}>
                 <Phone size={18} />
-                Call +91 84335 50882
+                Call +91 76666 97586
               </a>
             </div>
           </div>
