@@ -151,8 +151,8 @@ export default function HomePage() {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-4 border border-white/10">
                   <div className="relative h-[180px] sm:h-[220px]">
                     <Image
-                      src="/images/carousel-1.jpg"
-                      alt="Airr Cold Services technician servicing AC in Mumbai"
+                      src="/images/carousel-2.jpg"
+                      alt="Family and office enjoying cool AC air – Aqua Purity Services"
                       fill
                       className="object-cover"
                       priority
