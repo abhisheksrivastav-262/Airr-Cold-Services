@@ -26,9 +26,10 @@ export default function GalleryClient() {
   const categories = [
     { key: "all", label: "All Photos & Products" },
     { key: "ro-systems", label: "RO Purifier Models" },
+    { key: "reviews", label: "Customer Reviews & Work" },
     { key: "ro-service", label: "RO Doorstep Service" },
-    { key: "parts", label: "Sales & Spares" },
     { key: "ac-service", label: "AC Servicing" },
+    { key: "team-about", label: "Team & Workshop" },
   ];
 
   const filteredItems =

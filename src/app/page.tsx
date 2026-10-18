@@ -325,11 +325,28 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 to-transparent" />
                 </div>
               </div>
-              {/* Feature images row */}
+              {/* Customer reviews & verified work photos row - uncropped */}
               <div className="grid grid-cols-3 gap-3 mt-4">
-                {["/images/feature-1.jpg", "/images/feature-2.jpg", "/images/feature-3.jpg"].map((src, i) => (
-                  <div key={i} className="relative h-24 rounded-xl overflow-hidden shadow-sm">
-                    <Image src={src} alt={`AC service feature ${i + 1}`} fill className="object-cover" />
+                {[
+                  { src: "/images/feature-1.jpg", label: "Quality Work" },
+                  { src: "/images/feature-2.jpg", label: "Genuine Parts" },
+                  { src: "/images/feature-3.jpg", label: "Customer Review" },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="relative rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white group hover:shadow-md transition-shadow"
+                    style={{ aspectRatio: "6/5" }}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={`Customer review & service proof ${i + 1}`}
+                      fill
+                      sizes="(max-width: 768px) 33vw, 15vw"
+                      className="object-contain p-1 transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <span className="absolute bottom-1 left-1 right-1 text-center bg-[#071B2D]/80 backdrop-blur-sm text-cyan-300 text-[9px] font-semibold py-0.5 rounded">
+                      {item.label}
+                    </span>
                   </div>
                 ))}
               </div>

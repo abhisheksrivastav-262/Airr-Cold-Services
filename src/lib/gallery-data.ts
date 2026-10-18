@@ -2,15 +2,15 @@ export interface GalleryItem {
   id: string;
   title: string;
   subtitle: string;
-  category: "ro-systems" | "ro-service" | "ac-service" | "parts";
+  category: "ro-systems" | "reviews" | "ro-service" | "ac-service" | "team-about";
   categoryLabel: string;
   image: string;
-  aspectRatio?: string;
   features: string[];
   specs?: { [key: string]: string };
 }
 
 export const GALLERY_ITEMS: GalleryItem[] = [
+  // ─── RO MODELS ──────────────────────────────────────────
   {
     id: "ro-model-1",
     title: "Aqua Purity Prime RO + UV + UF",
@@ -144,11 +144,57 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "Service Support": "Same-day doorstep visit",
     },
   },
+
+  // ─── CUSTOMER REVIEWS & WORK PROOF ───────────────────────
+  {
+    id: "review-feature-1",
+    title: "Verified Customer Review & Service Proof #1",
+    subtitle: "Customer Feedback & Punctual Work Completion",
+    category: "reviews",
+    categoryLabel: "Customer Review",
+    image: "/images/feature-1.jpg",
+    features: [
+      "Authentic feedback from satisfied customer in Mumbai",
+      "On-time doorstep arrival with all necessary tools",
+      "Genuine replacement parts verified on site",
+      "Full post-service cleanup and performance testing",
+    ],
+  },
+  {
+    id: "review-feature-2",
+    title: "Verified Customer Review & Genuine Parts #2",
+    subtitle: "Authentic Parts & 5-Star Customer Rating",
+    category: "reviews",
+    categoryLabel: "Customer Review",
+    image: "/images/feature-2.jpg",
+    features: [
+      "Complete customer satisfaction on AC & RO servicing",
+      "Original brand components and transparent pricing",
+      "Clear warranty explanation on serviced units",
+      "Fast emergency resolution within 90 minutes",
+    ],
+  },
+  {
+    id: "review-feature-3",
+    title: "Verified Customer Review & Technician Rating #3",
+    subtitle: "Doorstep Service Appreciation & Recommendation",
+    category: "reviews",
+    categoryLabel: "Customer Review",
+    image: "/images/feature-3.jpg",
+    features: [
+      "Recommended by families and residential societies",
+      "Certified trained technicians with digital meters",
+      "Clear bill receipt with zero hidden extra charges",
+      "Long-term AMC maintenance plans available",
+    ],
+  },
+
+  // ─── RO DOORSTEP & BANNER ────────────────────────────────
   {
     id: "ro-banner",
     title: "Aqua Purity Water Purification, Sales & Spares",
     subtitle: "Complete Doorstep RO Solutions in Mumbai",
-    category: "parts",
+    category: "ro-service",
     categoryLabel: "Sales & Spare Parts",
     image: "/images/carousel-1.jpg",
     features: [
@@ -172,6 +218,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "All brands serviced: Kent, Aquaguard, Pureit, Livpure, etc.",
     ],
   },
+
+  // ─── AC SERVICE ──────────────────────────────────────────
   {
     id: "ac-doorstep-service",
     title: "Professional AC Repair & Jet Servicing",
@@ -184,6 +232,73 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "R32, R410A, R22 genuine gas charging",
       "Cooling issue and sensor diagnostics",
       "Copper piping and bracket installation",
+    ],
+  },
+  {
+    id: "ac-cooling-experience",
+    title: "Pure Comfort & Cool Living",
+    subtitle: "Reliable AC Cooling for Families and Offices",
+    category: "ac-service",
+    categoryLabel: "AC Comfort",
+    image: "/images/carousel-2.jpg",
+    features: [
+      "Instant cooling efficiency restoration",
+      "Reduced electrical power consumption",
+      "Whisper-quiet compressor and indoor fan",
+    ],
+  },
+
+  // ─── ABOUT & TEAM ────────────────────────────────────────
+  {
+    id: "team-about-workshop",
+    title: "Aqua Purity Services Workshop & Headquarters",
+    subtitle: "Serving Mumbai with Professional Excellence",
+    category: "team-about",
+    categoryLabel: "About & Team",
+    image: "/images/about.jpg",
+    features: [
+      "Located in Shah Industrial Area, Andheri West, Mumbai",
+      "Fully equipped service workshop and testing bench",
+      "Dedicated inventory of 100% genuine spare parts",
+    ],
+  },
+  {
+    id: "team-founder",
+    title: "Iqbal Sanghe – Founder & Lead Technician",
+    subtitle: "10+ Years of HVAC & Water Purification Experience",
+    category: "team-about",
+    categoryLabel: "Our Team",
+    image: "/images/team-1.jpg",
+    features: [
+      "Hands-on expertise across all AC & RO purifier brands",
+      "Dedicated to honest pricing and transparent diagnostics",
+      "Trained 50+ service technicians in Mumbai MMR",
+    ],
+  },
+  {
+    id: "team-ac-lead",
+    title: "Ramesh Patil – Senior AC Technician",
+    subtitle: "Split & Commercial AC Specialist",
+    category: "team-about",
+    categoryLabel: "Our Team",
+    image: "/images/team-2.jpg",
+    features: [
+      "Specialist in VRF, ductable & multi-split systems",
+      "Precision nitrogen leak testing and gas refilling",
+      "Over 8 years of technical field experience",
+    ],
+  },
+  {
+    id: "team-ro-lead",
+    title: "Suresh Yadav – RO & Water Purifier Technician",
+    subtitle: "Water Purification & Membrane Specialist",
+    category: "team-about",
+    categoryLabel: "Our Team",
+    image: "/images/team-3.jpg",
+    features: [
+      "Mastery in high-TDS water treatment & alkaline filters",
+      "Under-the-sink & commercial RO plant installation",
+      "Digital TDS and mineral testing verification",
     ],
   },
 ];
