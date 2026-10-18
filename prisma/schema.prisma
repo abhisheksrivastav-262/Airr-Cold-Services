@@ -1,0 +1,291 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── ADMIN ───────────────────────────────────────────────────────────────────
+
+model AdminUser {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  name         String
+  role         AdminRole  @default(ADMIN)
+  isActive     Boolean    @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  auditLogs    AuditLog[]
+
+  @@map("admin_users")
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  ADMIN
+}
+
+// ─── SERVICE CATALOGUE ───────────────────────────────────────────────────────
+
+model ServiceCategory {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  icon        String?
+  sortOrder   Int       @default(0)
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  services    Service[]
+
+  @@map("service_categories")
+}
+
+model Service {
+  id          String          @id @default(cuid())
+  categoryId  String
+  category    ServiceCategory @relation(fields: [categoryId], references: [id])
+  name        String
+  slug        String          @unique
+  shortDesc   String?
+  description String?
+  image       String?
+  price       String?
+  isActive    Boolean         @default(true)
+  isFeatured  Boolean         @default(false)
+  sortOrder   Int             @default(0)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  bookings    Booking[]
+
+  @@map("services")
+}
+
+// ─── CUSTOMERS ────────────────────────────────────────────────────────────────
+
+model Customer {
+  id        String    @id @default(cuid())
+  name      String
+  phone     String
+  email     String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  bookings  Booking[]
+
+  @@map("customers")
+}
+
+// ─── BOOKINGS ─────────────────────────────────────────────────────────────────
+
+model Booking {
+  id               String          @id @default(cuid())
+  referenceNumber  String          @unique
+  category         BookingCategory
+  customerId       String
+  customer         Customer        @relation(fields: [customerId], references: [id])
+  serviceId        String?
+  service          Service?        @relation(fields: [serviceId], references: [id])
+  serviceType      String
+  acType           String?
+  acBrand          String?
+  roBrand          String?
+  roType           String?
+  problemDesc      String
+  fullAddress      String
+  pinCode          String
+  preferredDate    DateTime
+  preferredSlot    String?
+  status           BookingStatus   @default(PENDING)
+  paymentStatus    PaymentStatus   @default(PENDING_VERIFICATION)
+  transactionId    String?
+  bookingFee       Decimal?        @db.Decimal(10, 2)
+  internalNotes    String?
+  adminNotes       String?
+  confirmedAt      DateTime?
+  completedAt      DateTime?
+  cancelledAt      DateTime?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  images           BookingImage[]
+  paymentRecords   PaymentRecord[]
+
+  @@map("bookings")
+}
+
+enum BookingCategory {
+  AC
+  RO
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  RESCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  REJECTED
+}
+
+enum PaymentStatus {
+  NOT_REQUIRED
+  PENDING_VERIFICATION
+  VERIFIED
+  REJECTED
+  REFUNDED
+}
+
+// ─── BOOKING IMAGES ───────────────────────────────────────────────────────────
+
+model BookingImage {
+  id        String   @id @default(cuid())
+  bookingId String
+  booking   Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  filename  String
+  mimeType  String
+  size      Int
+  path      String
+  createdAt DateTime @default(now())
+
+  @@map("booking_images")
+}
+
+// ─── PAYMENT RECORDS ──────────────────────────────────────────────────────────
+
+model PaymentRecord {
+  id              String        @id @default(cuid())
+  bookingId       String
+  booking         Booking       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  transactionId   String?
+  amount          Decimal?      @db.Decimal(10, 2)
+  status          PaymentStatus
+  verifiedByEmail String?
+  rejectionReason String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@map("payment_records")
+}
+
+// ─── CONTACT ENQUIRIES ────────────────────────────────────────────────────────
+
+model ContactEnquiry {
+  id              String         @id @default(cuid())
+  fullName        String
+  phone           String
+  email           String?
+  serviceCategory String?
+  serviceType     String?
+  pinCode         String?
+  message         String
+  status          EnquiryStatus  @default(NEW)
+  internalNotes   String?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@map("contact_enquiries")
+}
+
+enum EnquiryStatus {
+  NEW
+  CONTACTED
+  RESOLVED
+  SPAM
+}
+
+// ─── AMC PLANS ────────────────────────────────────────────────────────────────
+
+model AMCPlan {
+  id          String   @id @default(cuid())
+  category    String
+  name        String
+  description String?
+  inclusions  String?
+  exclusions  String?
+  visitCount  String?
+  validity    String?
+  isActive    Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("amc_plans")
+}
+
+// ─── BUSINESS SETTINGS ────────────────────────────────────────────────────────
+
+model BusinessSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+
+  @@map("business_settings")
+}
+
+// ─── TESTIMONIALS ─────────────────────────────────────────────────────────────
+
+model Testimonial {
+  id         String   @id @default(cuid())
+  name       String
+  location   String?
+  rating     Int      @default(5)
+  content    String
+  service    String?
+  isApproved Boolean  @default(false)
+  isActive   Boolean  @default(true)
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("testimonials")
+}
+
+// ─── NOTIFICATION LOG ─────────────────────────────────────────────────────────
+
+model NotificationLog {
+  id        String             @id @default(cuid())
+  type      NotificationType
+  recipient String
+  subject   String?
+  body      String?
+  status    NotificationStatus @default(PENDING)
+  error     String?
+  createdAt DateTime           @default(now())
+
+  @@map("notification_logs")
+}
+
+enum NotificationType {
+  EMAIL
+  SMS
+  WHATSAPP
+}
+
+enum NotificationStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+// ─── AUDIT LOG ────────────────────────────────────────────────────────────────
+
+model AuditLog {
+  id         String    @id @default(cuid())
+  adminId    String?
+  admin      AdminUser? @relation(fields: [adminId], references: [id])
+  action     String
+  entityType String?
+  entityId   String?
+  details    String?
+  ip         String?
+  createdAt  DateTime  @default(now())
+
+  @@map("audit_logs")
+}
