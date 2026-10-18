@@ -211,14 +211,32 @@ export default function AboutPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map(({ name, role, desc, img }) => (
-              <div key={name} className="bg-[#F6F9FC] rounded-2xl overflow-hidden border border-blue-50 hover:shadow-lg transition-shadow">
-                <div className="relative h-52">
-                  <Image src={img} alt={`${name} – ${role} at Airr Cold Services`} fill className="object-cover object-top" />
+              <div
+                key={name}
+                className="bg-[#F6F9FC] rounded-2xl overflow-hidden border border-blue-100 hover:shadow-xl transition-all duration-300 flex flex-col group"
+              >
+                {/* Full portrait image container – never cropped */}
+                <div
+                  className="relative w-full bg-gradient-to-b from-slate-100 to-blue-50/60 p-3 flex items-center justify-center border-b border-blue-100/60"
+                  style={{ minHeight: "300px", maxHeight: "360px" }}
+                >
+                  <div className="relative w-full h-[300px]">
+                    <Image
+                      src={img}
+                      alt={`${name} – ${role} at Aqua Purity Services`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  </div>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-700 text-lg mb-0.5" style={{ color: "var(--color-navy)" }}>{name}</h3>
-                  <p className="text-blue-600 text-sm font-600 mb-3">{role}</p>
-                  <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
+
+                <div className="p-6 flex-1 flex flex-col justify-between bg-white">
+                  <div>
+                    <h3 className="font-700 text-lg mb-0.5 text-[#071B2D]">{name}</h3>
+                    <p className="text-blue-600 text-sm font-semibold mb-3">{role}</p>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">{desc}</p>
+                  </div>
                 </div>
               </div>
             ))}
