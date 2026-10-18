@@ -187,6 +187,71 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── PROMO BANNER ─────────────────────────────────────────────────── */}
+      <section className="bg-[#071B2D] py-6 sm:py-8" aria-label="Promotional banner">
+        <div className="container-site">
+          {/* Urgent label */}
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="flex items-center gap-1.5 bg-red-500/20 text-red-400 border border-red-500/40 px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase animate-pulse">
+              <Zap size={11} className="fill-red-400" /> Limited Slots Available – Book Today!
+            </span>
+          </div>
+
+          {/* Banner image with glowing border */}
+          <div
+            className="relative rounded-2xl overflow-hidden shadow-2xl mx-auto"
+            style={{
+              maxWidth: "960px",
+              boxShadow: "0 0 0 2px rgba(39,196,232,0.4), 0 0 40px rgba(39,196,232,0.15), 0 20px 60px rgba(0,0,0,0.5)",
+            }}
+          >
+            {/* The banner image – full width, auto height */}
+            <div className="relative w-full" style={{ aspectRatio: "16/7" }}>
+              <Image
+                src="/images/carousel-1.jpg"
+                alt="Aqua Purity Services – RO Water Purification, Sales & Spare Parts"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Subtle dark overlay for readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10" />
+            </div>
+
+            {/* Bottom CTA bar */}
+            <div
+              className="absolute bottom-0 left-0 right-0 flex flex-col sm:flex-row items-center justify-between gap-3 px-4 sm:px-8 py-3 sm:py-4"
+              style={{ background: "linear-gradient(to top, rgba(7,27,45,0.95) 60%, transparent)" }}
+            >
+              <div className="text-center sm:text-left">
+                <p className="text-white font-bold text-sm sm:text-base leading-tight">
+                  Expert RO Service at Your Doorstep
+                </p>
+                <p className="text-cyan-300 text-xs font-medium mt-0.5">
+                  📞 7666697586 &nbsp;|&nbsp; info@aquapurity.in &nbsp;|&nbsp; www.aquapurity.in
+                </p>
+              </div>
+              <div className="flex gap-2 flex-shrink-0">
+                <a
+                  href={`https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent("Hi! I need RO water purifier service.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-whatsapp btn-sm font-bold shadow-lg"
+                >
+                  <MessageCircle size={14} /> WhatsApp
+                </a>
+                <a
+                  href={`tel:${BUSINESS.primaryPhone.replace(/\s/g, "")}`}
+                  className="btn btn-primary btn-sm font-bold shadow-lg"
+                >
+                  <Phone size={14} /> Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── STATS ────────────────────────────────────────────────────────── */}
       <section className="bg-[#F6F9FC] py-12" aria-label="Company statistics">
         <div className="container-site">
