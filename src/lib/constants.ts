@@ -1,6 +1,6 @@
 export const BUSINESS = {
-  name: "Airr Cold Services",
-  tagline: "Cooling Experts You Trust",
+  name: "Aqua Purity Services",
+  tagline: "Pure Water Pure Life",
   founder: "Iqbal Sanghe",
   address: "A-22, Shah Industrial Area, Andheri West, Mumbai, Maharashtra 400053, India",
   addressShort: "Andheri West, Mumbai 400053",

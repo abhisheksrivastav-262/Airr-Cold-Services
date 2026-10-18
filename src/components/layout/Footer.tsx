@@ -55,15 +55,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="relative w-[130px] h-[50px] mb-5">
-              <Image
-                src="/images/logo-white.png"
-                alt="Airr Cold Services white logo"
-                fill
-                className="object-contain object-left"
-              />
+            <div className="flex items-center gap-3 mb-5">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-white">
+                <Image
+                  src="/images/logo.png"
+                  alt="Aqua Purity Services logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-base text-white leading-tight">Aqua Purity Services</span>
+                <span className="text-cyan-300 text-xs font-medium mt-0.5">Pure Water Pure Life</span>
+              </div>
             </div>
-            <p className="text-blue-200 text-sm mb-1 font-600">{BUSINESS.tagline}</p>
             <p className="text-slate-400 text-sm leading-relaxed mt-3 mb-6">
               Professional AC repair, installation, maintenance, and RO water
               purifier services across Mumbai and Maharashtra.
@@ -237,7 +242,7 @@ export default function Footer() {
         <div className="container-site py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-slate-500 text-sm">
-              © {year} Airr Cold Services. All rights reserved.
+              © {year} Aqua Purity Services. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               {legalLinks.map((l) => (

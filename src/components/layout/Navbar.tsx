@@ -64,13 +64,13 @@ export default function Navbar() {
       <div className="container-site w-full">
         <div className="flex items-center justify-between h-[72px] sm:h-[80px]">
           {/* Logo & Business Name */}
-          <Link href="/" className="flex items-center gap-3" aria-label="Airr Cold Services home">
-            <div className="relative w-11 h-11 rounded-full overflow-hidden flex-shrink-0 bg-white/10 p-1 border border-white/20">
+          <Link href="/" className="flex items-center gap-3" aria-label="Aqua Purity Services home">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
               <Image
-                src={scrolled || mobileOpen ? "/images/logo.png" : "/images/logo-white.png"}
-                alt="Airr Cold Services logo"
+                src="/images/logo.png"
+                alt="Aqua Purity Services logo"
                 fill
-                className="object-contain p-0.5"
+                className="object-contain"
                 priority
               />
             </div>
@@ -79,13 +79,13 @@ export default function Navbar() {
                 "font-extrabold text-base sm:text-lg tracking-tight leading-none",
                 scrolled || mobileOpen ? "text-[#071B2D]" : "text-white"
               )}>
-                Airr Cold Services
+                Aqua Purity Services
               </span>
               <span className={cn(
                 "text-[10px] sm:text-[11px] font-medium tracking-wide mt-0.5 leading-none",
                 scrolled || mobileOpen ? "text-blue-600" : "text-cyan-300"
               )}>
-                Cooling & RO Purifier Experts
+                Pure Water Pure Life
               </span>
             </div>
           </Link>

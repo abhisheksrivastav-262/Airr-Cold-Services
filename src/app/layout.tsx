@@ -6,8 +6,8 @@ import FloatingActions from "@/components/ui/FloatingActions";
 
 export const metadata: Metadata = {
   title: {
-    default: "Airr Cold Services – AC Repair, Installation & RO Water Purifier in Mumbai",
-    template: "%s | Airr Cold Services",
+    default: "Aqua Purity Services – AC Repair, Installation & RO Water Purifier in Mumbai",
+    template: "%s | Aqua Purity Services",
   },
   description:
     "Expert AC repair, installation, maintenance, gas refilling, AMC plans, and RO water purifier services across Mumbai, Thane & Navi Mumbai. Call +91 76666 97586.",
@@ -19,17 +19,17 @@ export const metadata: Metadata = {
     "air conditioner maintenance Mumbai",
     "AC gas refilling Mumbai",
     "AMC plan AC Mumbai",
-    "Airr Cold Services",
+    "Aqua Purity Services",
     "AC technician Andheri West",
   ],
-  authors: [{ name: "Airr Cold Services" }],
-  creator: "Airr Cold Services",
+  authors: [{ name: "Aqua Purity Services" }],
+  creator: "Aqua Purity Services",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://airrcold.com",
-    siteName: "Airr Cold Services",
-    title: "Airr Cold Services – AC Repair & RO Water Purifier Mumbai",
+    siteName: "Aqua Purity Services",
+    title: "Aqua Purity Services – AC Repair & RO Water Purifier Mumbai",
     description:
       "Expert AC repair, installation, maintenance & RO water purifier services across Mumbai. 5,000+ happy customers. 10+ years experience.",
     images: [
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
         url: "/images/logo.png",
         width: 1200,
         height: 630,
-        alt: "Airr Cold Services – Cooling Experts You Trust",
+        alt: "Aqua Purity Services – Pure Water Pure Life",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Airr Cold Services – AC Repair & RO Water Purifier Mumbai",
+    title: "Aqua Purity Services – AC Repair & RO Water Purifier Mumbai",
     description:
       "Expert AC & RO water purifier services across Mumbai. Book online.",
   },
@@ -80,7 +80,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "Airr Cold Services",
+              name: "Aqua Purity Services",
               description:
                 "Expert AC repair, installation, maintenance and RO water purifier services across Mumbai and Maharashtra.",
               url: "https://airrcold.com",
