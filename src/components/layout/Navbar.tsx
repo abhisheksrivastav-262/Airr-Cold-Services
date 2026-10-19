@@ -91,19 +91,21 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1.5">
             <Link href="/" className={cn(linkClass("/"), "px-3 py-2 rounded-lg")}>
               Home
             </Link>
             <Link href="/about" className={cn(linkClass("/about"), "px-3 py-2 rounded-lg")}>
               About
             </Link>
-
             <Link href="/ac-services" className={cn(linkClass("/ac-services"), "px-3 py-2 rounded-lg")}>
               AC Services
             </Link>
             <Link href="/ro-services" className={cn(linkClass("/ro-services"), "px-3 py-2 rounded-lg")}>
               RO Services
+            </Link>
+            <Link href="/gallery" className={cn(linkClass("/gallery"), "px-3 py-2 rounded-lg")}>
+              Gallery
             </Link>
             <Link href="/amc-plans" className={cn(linkClass("/amc-plans"), "px-3 py-2 rounded-lg")}>
               AMC Plans
@@ -118,14 +120,14 @@ export default function Navbar() {
             <a
               href={`tel:${BUSINESS.primaryPhone.replace(/\s/g, "")}`}
               className={cn(
-                "flex items-center gap-1.5 text-sm font-600 transition-colors",
+                "flex items-center gap-1.5 text-sm font-semibold transition-colors",
                 scrolled ? "text-slate-700 hover:text-blue-600" : "text-white/90 hover:text-white"
               )}
             >
-              <Phone size={14} />
+              <Phone size={15} />
               {BUSINESS.primaryPhone}
             </a>
-            <Link href="/book-service" className="btn btn-primary btn-sm">
+            <Link href="/book-service" className="btn btn-primary btn-sm font-bold">
               Book Service
             </Link>
           </div>
